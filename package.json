@@ -1,0 +1,81 @@
+{
+  "_id": "volantis-flow@1.0.7",
+  "_inBundle": false,
+  "_location": "/volantis-flow",
+  "_phantomChildren": {
+    "css-to-react-native": "2.2.1",
+    "fbjs": "0.8.17",
+    "ieee754": "1.1.12",
+    "is-plain-object": "2.0.4",
+    "lodash": "4.17.10",
+    "lodash-es": "4.17.10",
+    "loose-envify": "1.4.0",
+    "prop-types": "15.6.2",
+    "stylis": "3.5.3",
+    "symbol-observable": "1.2.0"
+  },
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "volantis-flow@^1.0.7",
+    "name": "volantis-flow",
+    "escapedName": "volantis-flow",
+    "rawSpec": "^1.0.7",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.7"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/volantis-flow/-/volantis-flow-1.0.3.tgz",
+  "_spec": "volantis-flow@^1.0.7",
+  "bundleDependencies": false,
+  "dependencies": {
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "styled-components": "^2.2.1"
+  },
+  "deprecated": false,
+  "description": "volantis-flow React component",
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-jsx-a11y": "5.x",
+    "eslint-plugin-react": "^7.2.1",
+    "flow-bin": "^0.57.3",
+    "flow-typed": "^2.1.5",
+    "nwb": "0.18.x",
+    "prettier": "^1.7.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "name": "volantis-flow",
+  "scripts": {
+    "air": "eslint \"{src,demo/src}/**/*.js\"",
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "flow": "flow",
+    "fti": "flow-typed install",
+    "lintjs": "prettier --single-quote --trailing-comma es5 --write \"{src,demo/src,flow-typed-definition}/**/*.js\"",
+    "preversion": "yarn build",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "version": "1.0.7"
+}
