@@ -301,7 +301,16 @@ export var metaEntityReducer = function metaEntityReducer() {
         var _action$payload7 = action.payload;
 
         return state.map(function (metaEntity) {
-          return metaEntity.id === _action$payload7 ? _extends({}, metaEntity, { isError: !metaEntity.isError }) : _extends({}, metaEntity, { isError: metaEntity.isError });
+          return metaEntity.id === _action$payload7 ? _extends({}, metaEntity, { isError: true }) : _extends({}, metaEntity, { isError: metaEntity.isError });
+        });
+      }
+
+    case 'rd/metaentity/SET_NOT_ERROR':
+      {
+        var _action$payload7 = action.payload;
+
+        return state.map(function (metaEntity) {
+          return _extends({}, metaEntity, { isError: false });
         });
       }
 
@@ -408,7 +417,13 @@ export var setError = function setError(id) {
   return {
     type: 'rd/metaentity/SET_ERROR',
     payload: id
-  }
+  };
+}
+
+export var setNotError = function setNotError() {
+  return {
+    type: 'rd/metaentity/SET_NOT_ERROR'
+  };
 }
 
 export default entityReducer;
