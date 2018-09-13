@@ -1,4 +1,4 @@
-var _templateObject = _taggedTemplateLiteralLoose(['\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: center;\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  user-select: none;\n'], ['\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: center;\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  user-select: none;\n']);
+var _templateObject = _taggedTemplateLiteralLoose(['\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: left;\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  user-select: none;\n'], ['\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: left;\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  user-select: none;\n']);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -15,6 +15,7 @@ import { move, linkTo, addLinkedEntity, removeEntity, selectEntity } from './red
 import { connecting, anchorEntity } from '../canvas/reducer';
 import defaultEntity from './defaultEntity';
 import ContextMenu from '../contextMenu/component';
+import Icon from '../icon/component';
 
 // eslint-disable-next-line import/first
 

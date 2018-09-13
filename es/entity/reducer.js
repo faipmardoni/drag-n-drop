@@ -34,6 +34,7 @@ var entityReducer = function entityReducer() {
         type: action.payload.type,
         width: action.payload.width,
         height: action.payload.height,
+        label: action.payload.label,
         x: action.payload.x,
         y: action.payload.y,
         name: action.payload.name
@@ -269,6 +270,7 @@ export var metaEntityReducer = function metaEntityReducer() {
         id: action.payload.id,
         isAnchored: action.payload.isAnchored,
         isSelected: action.payload.isSelected,
+        isError: false,
         anchor: {
           x: action.payload.width / 2,
           y: action.payload.height / 2
@@ -279,6 +281,7 @@ export var metaEntityReducer = function metaEntityReducer() {
         id: action.payload.entity.id,
         isAnchored: action.payload.entity.isAnchored,
         isSelected: action.payload.entity.isSelected,
+        isError: false,
         anchor: {
           x: action.payload.entity.width / 2,
           y: action.payload.entity.height / 2
