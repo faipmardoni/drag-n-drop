@@ -91,6 +91,12 @@ var entityReducer = function entityReducer() {
         }) : entity;
       });
 
+      // return {
+      //   ...state,
+      //   entity: nextState,
+      //   entityRemoved: action.payload
+      // };
+
     case 'rd/canvas/TRACK':
       {
         if (canvas.anchoredEntity.isAnchored) {
@@ -351,6 +357,22 @@ export var metaEntityReducer = function metaEntityReducer() {
   }
 };
 
+export var entityRemovedReducer = function entityRemovedReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments[1];
+  var entity = arguments[2];
+  var canvas = arguments[3];
+
+  switch (action.type) {
+    case 'rd/entity/REMOVE':
+      return action.payload;
+    case 'rd/removedEntity/REMOVE':
+      return undefined;
+    default:
+      return state;
+  }
+}
+
 export var setEntities = function setEntities(payload) {
   return {
     type: 'rd/entity/SET',
@@ -426,6 +448,12 @@ export var setError = function setError(id) {
 export var setNotError = function setNotError() {
   return {
     type: 'rd/metaentity/SET_NOT_ERROR'
+  };
+}
+
+export var removeID = function removeID() {
+  return {
+    type: 'rd/removedEntity/REMOVE'
   };
 }
 
