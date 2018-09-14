@@ -62,8 +62,8 @@ var entityReducer = function entityReducer() {
     case 'rd/entity/ADD_LINKED':
       {
         var _action$payload = action.payload,
-            _entity = _action$payload.entity,
-            _id = _action$payload.id;
+          _entity = _action$payload.entity,
+          _id = _action$payload.id;
 
         return [].concat(state.map(function (existingEntity) {
           return existingEntity.id === _id ? _extends({}, existingEntity, {
@@ -91,11 +91,11 @@ var entityReducer = function entityReducer() {
         }) : entity;
       });
 
-      // return {
-      //   ...state,
-      //   entity: nextState,
-      //   entityRemoved: action.payload
-      // };
+    // return {
+    //   ...state,
+    //   entity: nextState,
+    //   entityRemoved: action.payload
+    // };
 
     case 'rd/canvas/TRACK':
       {
@@ -105,8 +105,8 @@ var entityReducer = function entityReducer() {
           var mEntity = metaEntity.find(function (e) {
             return e.id === _id2;
           }) || {
-            anchor: { x: 0, y: 0 }
-          };
+              anchor: { x: 0, y: 0 }
+            };
           var _x2 = canvas.cursor.x - mEntity.anchor.x;
           var _y = canvas.cursor.y - mEntity.anchor.y;
           var gridX = positionAdjustedToGrid(_x2, canvas.gridSize);
@@ -156,9 +156,9 @@ var entityReducer = function entityReducer() {
     case 'rd/entity/MOVE':
       {
         var _action$payload2 = action.payload,
-            _id3 = _action$payload2.id,
-            _x3 = _action$payload2.x,
-            _y2 = _action$payload2.y;
+          _id3 = _action$payload2.id,
+          _x3 = _action$payload2.x,
+          _y2 = _action$payload2.y;
 
         var _gridX = positionAdjustedToGrid(_x3, canvas.gridSize);
         var _gridY = positionAdjustedToGrid(_y2, canvas.gridSize);
@@ -201,8 +201,8 @@ var entityReducer = function entityReducer() {
     case 'rd/entity/SET_NAME':
       {
         var _action$payload3 = action.payload,
-            _id4 = _action$payload3.id,
-            _name = _action$payload3.name;
+          _id4 = _action$payload3.id,
+          _name = _action$payload3.name;
 
         return state.map(function (entity) {
           return entity.id === _id4 ? _extends({}, entity, {
@@ -214,9 +214,9 @@ var entityReducer = function entityReducer() {
     case 'rd/entity/LINK_POINTS':
       {
         var _action$payload4 = action.payload,
-            from = _action$payload4.from,
-            to = _action$payload4.to,
-            _points = _action$payload4.points;
+          from = _action$payload4.from,
+          to = _action$payload4.to,
+          _points = _action$payload4.points;
 
         return state.map(function (entity) {
           return entity.id === from ? _extends({}, entity, {
@@ -232,8 +232,8 @@ var entityReducer = function entityReducer() {
     case 'rd/entity/SET_CUSTOM':
       {
         var _action$payload5 = action.payload,
-            _id5 = _action$payload5.id,
-            _custom = _action$payload5.custom;
+          _id5 = _action$payload5.id,
+          _custom = _action$payload5.custom;
 
         return state.map(function (entity) {
           return entity.id === _id5 ? _extends({}, entity, {
@@ -297,8 +297,8 @@ export var metaEntityReducer = function metaEntityReducer() {
     case 'rd/metaentity/SELECT':
       {
         var _action$payload6 = action.payload,
-            _id6 = _action$payload6.id,
-            _isSelected = _action$payload6.isSelected;
+          _id6 = _action$payload6.id,
+          _isSelected = _action$payload6.isSelected;
 
         return state.map(function (metaEntity) {
           return metaEntity.id === _id6 ? _extends({}, metaEntity, { isSelected: _isSelected }) : _extends({}, metaEntity, { isSelected: false });
@@ -367,7 +367,7 @@ export var entityRemovedReducer = function entityRemovedReducer() {
     case 'rd/entity/REMOVE':
       return action.payload;
     case 'rd/removedEntity/REMOVE':
-      return undefined;
+      return '';
     default:
       return state;
   }

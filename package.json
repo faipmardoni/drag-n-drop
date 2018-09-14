@@ -1,5 +1,5 @@
 {
-  "_id": "volantis-flow@1.1.1",
+  "_id": "volantis-flow@1.1.4",
   "_inBundle": false,
   "_location": "/volantis-flow",
   "_phantomChildren": {
@@ -17,18 +17,18 @@
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "volantis-flow@^1.1.1",
+    "raw": "volantis-flow@^1.1.4",
     "name": "volantis-flow",
     "escapedName": "volantis-flow",
-    "rawSpec": "^1.1.1",
+    "rawSpec": "^1.1.4",
     "saveSpec": null,
-    "fetchSpec": "^1.1.1"
+    "fetchSpec": "^1.1.4"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/volantis-flow/-/volantis-flow-1.0.3.tgz",
-  "_spec": "volantis-flow@^1.1.1",
+  "_spec": "volantis-flow@^1.1.4",
   "bundleDependencies": false,
   "dependencies": {
     "react-redux": "^5.0.6",
@@ -77,5 +77,5 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "version": "1.1.1"
+  "version": "1.1.4"
 }
