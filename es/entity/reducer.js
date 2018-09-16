@@ -11,6 +11,7 @@ var entityReducer = function entityReducer() {
   var action = arguments[1];
   var metaEntity = arguments[2];
   var canvas = arguments[3];
+  var scroll = arguments[4];
 
   switch (action.type) {
     case 'rd/entity/SET':
@@ -90,12 +91,6 @@ var entityReducer = function entityReducer() {
           })
         }) : entity;
       });
-
-    // return {
-    //   ...state,
-    //   entity: nextState,
-    //   entityRemoved: action.payload
-    // };
 
     case 'rd/canvas/TRACK':
       {
@@ -255,6 +250,7 @@ export var metaEntityReducer = function metaEntityReducer() {
   var action = arguments[1];
   var entity = arguments[2];
   var canvas = arguments[3];
+  var scroll = arguments[4];
 
   switch (action.type) {
     case 'rd/entity/SET':
@@ -360,8 +356,6 @@ export var metaEntityReducer = function metaEntityReducer() {
 export var entityRemovedReducer = function entityRemovedReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments[1];
-  var entity = arguments[2];
-  var canvas = arguments[3];
 
   switch (action.type) {
     case 'rd/entity/REMOVE':
@@ -371,7 +365,19 @@ export var entityRemovedReducer = function entityRemovedReducer() {
     default:
       return state;
   }
-}
+};
+
+export var scrollCanvasReducer = function scrollCanvasReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments[1];
+
+  switch (action.type) {
+    case 'rd/SCROLL': 
+      return action.payload;
+    default:
+      return state;
+  }
+};
 
 export var setEntities = function setEntities(payload) {
   return {
@@ -443,18 +449,25 @@ export var setError = function setError(id) {
     type: 'rd/metaentity/SET_ERROR',
     payload: id
   };
-}
+};
 
 export var setNotError = function setNotError() {
   return {
     type: 'rd/metaentity/SET_NOT_ERROR'
   };
-}
+};
 
 export var removeID = function removeID() {
   return {
     type: 'rd/removedEntity/REMOVE'
   };
-}
+};
+
+export var addScroll = function addScroll(payload) {
+  return {
+    type: 'rd/SCROLL',
+    payload
+  };
+};
 
 export default entityReducer;

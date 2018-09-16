@@ -23,7 +23,10 @@ var configViewportHelper = function configViewportHelper(state) {
   });
 };
 
-var canvasReducer = function canvasReducer(state, action) {
+var canvasReducer = function canvasReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments[1];
+  var scroll = arguments[2];
   switch (action.type) {
     case 'rd/canvas/CONFIG_VIEWPORT':
       return configViewportHelper(state);
@@ -45,7 +48,7 @@ var canvasReducer = function canvasReducer(state, action) {
       }) : _extends({}, state, {
         cursor: {
           x: (action.payload.x - state.canvasViewport.x - state.canvasArtboard.x) * (1 / state.zoom),
-          y: (action.payload.y - state.canvasViewport.y - state.canvasArtboard.y) * (1 / state.zoom)
+          y: (action.payload.y - state.canvasViewport.y - state.canvasArtboard.y - scroll) * (1 / state.zoom)
         }
       });
 
@@ -87,6 +90,11 @@ var canvasReducer = function canvasReducer(state, action) {
         }
       });
 
+    case 'rd/canvas/MIN_HEIGHT':
+      return _extends({}, state, {
+        canvasArtboard: _extends({}, state.canvasArtboard, { minHeight: action.payload })
+      });
+    
     default:
       return state;
   }
@@ -135,6 +143,13 @@ export var anchorCanvas = function anchorCanvas(payload) {
   return {
     type: 'rd/canvas/ANCHOR_CANVAS',
     payload: payload
+  };
+};
+
+export var minHeightCanvas = function minHeightCanvas(payload) {
+  return {
+    type: 'rd/canvas/MIN_HEIGHT',
+    payload
   };
 };
 
