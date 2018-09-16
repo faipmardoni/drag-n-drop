@@ -149,7 +149,7 @@ export var anchorCanvas = function anchorCanvas(payload) {
 export var minHeightCanvas = function minHeightCanvas(payload) {
   return {
     type: 'rd/canvas/MIN_HEIGHT',
-    payload
+    payload: payload
   };
 };
 

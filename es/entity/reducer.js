@@ -466,7 +466,7 @@ export var removeID = function removeID() {
 export var addScroll = function addScroll(payload) {
   return {
     type: 'rd/SCROLL',
-    payload
+    payload: payload
   };
 };
 
