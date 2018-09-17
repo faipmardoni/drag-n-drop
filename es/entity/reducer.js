@@ -312,10 +312,10 @@ export var metaEntityReducer = function metaEntityReducer() {
 
     case 'rd/metaentity/SET_NOT_ERROR':
       {
-        var _action$payload7 = action.payload;
+        var _action$payload8 = action.payload;
 
         return state.map(function (metaEntity) {
-          return _extends({}, metaEntity, { isError: false });
+          return metaEntity.id === _action$payload8 ? _extends({}, metaEntity, { isError: false }) : _extends({}, metaEntity, { isError: metaEntity.isError });
         });
       }
 
@@ -451,9 +451,10 @@ export var setError = function setError(id) {
   };
 };
 
-export var setNotError = function setNotError() {
+export var setNotError = function setNotError(id) {
   return {
-    type: 'rd/metaentity/SET_NOT_ERROR'
+    type: 'rd/metaentity/SET_NOT_ERROR',
+    payload: id
   };
 };
 
