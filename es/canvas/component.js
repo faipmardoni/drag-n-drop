@@ -37,7 +37,8 @@ var CanvasArtboard = style.div.attrs({
   style: function style(props) {
     var restPercentage = 100 - 100 / props.gridSize;
     var defaultStyles = {
-      minHeight: props.artboard.minHeight + 'px',
+      minHeight: (props.artboard.minHeight) + 'px',
+      maxHeight: (props.artboard.minHeight) + 'px',
       transform: 'translate(' + props.artboard.x + 'px, ' + props.artboard.y + 'px) scale(' + props.zoomLevel + ')',
       width: props.artboard.width + 'px',
       height: props.artboard.height + 'px'
